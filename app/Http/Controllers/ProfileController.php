@@ -9,7 +9,10 @@ class ProfileController extends Controller
 
   function getProfile()
   {
-    return view('profile');
+    $Amily=['Name'=>'Amily','SurName'=>'Calvinus','Clan'=>'Vimp'];
+    $Kornchaval=['Name'=>'Kornchaval','SurName'=>'Prathipasen','Clan'=>'Human'];
+
+    return view('profile',['dbProfile'=>[$Amily,$Kornchaval]]);
   }
 
     function getYear(){
