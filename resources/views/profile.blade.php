@@ -24,6 +24,13 @@
             <p>SubAl-Share
             <p>SubHomeLand</p>
             <p>SubMartOnline</p>
+
+            @foreach ($tprofile as $tpro)
+              <p>Name : {{$tpro['name']}}</p>
+              <p>Age : </p>
+            @endforeach
+
+
         </div>
 
       </div>
@@ -31,29 +38,19 @@
       <div class="row">
         <div class="col-md-4">
 
-          @foreach ($dbProfile as $dbPro)
 
-            @if ($loop->iteration ==2)
-              <p>This Second Iteration</p>
-            @else
-              <p>This is frist iteration</p>
-            @endif
-
-            <p>{{$loop->iteration}}. Name : {{$dbPro['Name']}}</p>
-            <p>SurName : {{$dbPro['SurName']}}</p>
-            <p>Clan : {{$dbPro['Clan']}}</p>
-            <hr>
-
-          @endforeach
 
 
         </div>
         <div class="col-md-4">
-          <ul>
-            @for ($i=1; $i <=12 ; $i++)
-              <li>{{$i}}*2={{2*$i}} </li>
-            @endfor
-          </ul>
+
+
+              อายุ : {{ $age }}
+
+
+
+
+
         </div>
         <div class="col-md-4"></div>
 
