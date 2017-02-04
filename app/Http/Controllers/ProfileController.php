@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class ProfileController extends Controller
 {
-  var $Amily=['Name'=>'Amily','SurName'=>'Calvinus','Clan'=>'Vimp'];
+
   var  $eprofile=[
                 'name'=>'Kornchaval',
                 'surname'=>'Prathipasen',
@@ -19,8 +19,18 @@ class ProfileController extends Controller
                 'brithday'=>'5 กรกฎาคม พ.ศ. 2533 '
               ];
 
+  var $history=[
+                  'พ.ศ. 2555 - จบการศึกษา คณะบัญชีและการจัดการ สาขาคอมพิวเตอร์ธุรกิจ',
+                  'พ.ศ. 2555 - สมัครรับราชการทหาร [ผลัด1/55 สังกัด: กองร้อยมณฑลทหารบกที่ ๒๓ จังหวัด ขอนแก่น]',
+                  'พ.ศ. 2556-ปัจจุบัน - ทำธุรกิจส่วนตัว'
+                ];
 
-   var  $age=10 ;
+   var $favorites= [
+                    ['คอมพิวเตอร์ และการเขียนโปรแกรม','com'],
+                    ['ทำขนม และเบเกอรี่','bakery'],
+                    ['อาหารที่ชอบ : อาหารเหนือ โดยเฉพาะข้าวซอย','food']
+                  ];
+
 
    function __construct()
    {
@@ -30,11 +40,13 @@ class ProfileController extends Controller
 
     function getProfile()
     {
-      //return view('profile',['dbprofile'=>[$eprofile,$tprofile,$age]]);
-      //return view('profile',['dbProfile'=>[$Amily,$Kornchaval]]);
+
       return view('profile',['eprofile'=>[$this->eprofile]],
                             ['tprofile'=>[$this->tprofile]]
-                            )->with('age',$this->age);
+                            //['fav'=>[$this->favorites]]
+                            )->with('age',$this->age)
+                             ->with('bigo',$this->history)
+                             ->with('fav',$this->favorites);
 
       //return view('profile', $this->eprofile,$this->tprofile);
 
