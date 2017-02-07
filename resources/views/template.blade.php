@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Example Remider App</title>
-    <link rel="stylesheet" href="{{elixir('app.css')}}"
+    <link rel="stylesheet" href="{{elixir('css/app.css')}}"
   </head>
   <body>
     <nav class="navbar navbar-default">
@@ -28,7 +28,7 @@
       <!--Content -->
       <div class="container">
         @yield('content')
-      </div
+      </div>
 
   </body>
 </html>
