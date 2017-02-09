@@ -15,11 +15,9 @@ Route::get('/temp',function ()
     return view('home');
   });
 
-Rount::get('/','ReminderController@home');
-    //return view('welcome');
-    //return ['Name'=>'Kornchaval' , 'SurName'=>'Prathipasen'];
-    //return "5556";
-});
+Route::get('/','ReminderController@home');
+  
+
 
 //----------------------------------------------
 Route::get('/profile','ProfileController@getProfile');
