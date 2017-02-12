@@ -10,17 +10,14 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/about','me@getme');
+
 Route::get('/temp',function ()
     {
     return view('home');
   });
 
-Route::get('/', function () {
-    return view('profile');
-    //return view('welcome');
-    //return ['Name'=>'Kornchaval' , 'SurName'=>'Prathipasen'];
-    //return "5556";
-});
+Route::get('/','RemiderController@home');
 
 //----------------------------------------------
 Route::get('/profile','ProfileController@getProfile');

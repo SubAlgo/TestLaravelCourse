@@ -19,8 +19,8 @@
           </div>
             <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-              <li class="active"><a href="#">Home</a></li>
-              <li><a href="#">About</a></li>
+              <li class="active"><a href="/">Home</a></li>
+              <li><a href="/about">About</a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
@@ -30,6 +30,8 @@
       <div class="container">
         @yield('content')
       </div>
+
+
 
   </body>
 </html>
