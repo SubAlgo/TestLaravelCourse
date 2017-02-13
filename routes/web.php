@@ -17,7 +17,8 @@ Route::get('/temp',function ()
     return view('home');
   });
 
-Route::get('/','RemiderController@home');
+//Route::get('/','RemiderController@home');
+Route::get('/','ReminderController@home');
 
 //----------------------------------------------
 Route::get('/profile','ProfileController@getProfile');
