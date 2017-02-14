@@ -20,4 +20,12 @@ class ReminderController extends Controller
       DB::table('Reminder')->insert(['body'=>$body,'isFinished'=>false,'createdUserID'=>1]);
       return back(); //คือการส่งUserกลับหน้าเดิม
     }
+
+    public function deleteReminder(Request $request)
+    {
+      $id = $request->id;
+
+      DB::table('Reminder')->where('id',$id)->delete();
+      return back()->with('status','Good Job! You finished 1 task');
+    }
 }
