@@ -20,6 +20,8 @@ Route::get('/temp',function ()
 //Route::get('/','RemiderController@home');
 Route::get('/','ReminderController@home');
 
+Route::post('/reminder/new','ReminderController@addReminder');
+
 //----------------------------------------------
 Route::get('/profile','ProfileController@getProfile');
 
