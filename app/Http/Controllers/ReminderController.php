@@ -4,12 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
+use App\ReminderModel; //Import ReminderModel เข้ามาเพื่อให้สามารถใช้งานได้
 
 class ReminderController extends Controller
 {
     public function home()
     {
-      $reminders = DB::table('Reminder')->orderBy('id','desc')->get();
+      //$reminders = DB::table('Reminder')->orderBy('id','desc')->get();
+      $reminders = ReminderModel::orderBy('id','desc')->get();
       return view('home',['reminders'=> $reminders]);
     }
 
