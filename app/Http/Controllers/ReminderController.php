@@ -15,11 +15,18 @@ class ReminderController extends Controller
       return view('home',['reminders'=> $reminders]);
     }
 
-    public function addReminder(Request $request)
+    public function addReminder(Request $request) //$request เป็นข้อมูลที่รับค่ามาจาก form
     {
-      $body = $request->reminder;
+      $reminder = new ReminderModel();//สร้าง Object จาก class ReminderModel
+      $reminder->body = $request->reminder;
+      $reminder->isFinished = false;
+      $reminder->createdUserID = 1;
 
+      $reminder->save();
+
+      /*$body = $request->reminder;
       DB::table('Reminder')->insert(['body'=>$body,'isFinished'=>false,'createdUserID'=>1]);
+      */
       return back(); //คือการส่งUserกลับหน้าเดิม
     }
 
@@ -27,7 +34,9 @@ class ReminderController extends Controller
     {
       $id = $request->id;
 
-      DB::table('Reminder')->where('id',$id)->delete();
+      ReminderModel::find($id)->delete();
+
+      //DB::table('Reminder')->where('id',$id)->delete();
       return back()->with('status','Good Job! You finished 1 task');
     }
 }
