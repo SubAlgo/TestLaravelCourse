@@ -15,6 +15,7 @@ class AlterReminderTable1 extends Migration
     {
         Schema::table('Reminder', function (Blueprint $table) {
             $table->integer('ReminderType')->unsigned()->nullable();
+            
 
             $table->foreign('ReminderType')->references('id')->on('Reminder');
         });

@@ -22,6 +22,7 @@ class CreateReminderTable extends Migration
         });
     }
 
+
     /**
      * Reverse the migrations.
      *

@@ -24,6 +24,7 @@ class ReminderController extends Controller
       $reminder->ReminderType = 1;
 
       $reminder->save();
+      
 
       /*$body = $request->reminder;
       DB::table('Reminder')->insert(['body'=>$body,'isFinished'=>false,'createdUserID'=>1]);

@@ -18,6 +18,7 @@ class CreateRemindertypeTable extends Migration
             $table->String('typename');
         });
     }
+    
 
     /**
      * Reverse the migrations.
