@@ -21,6 +21,7 @@ class ReminderController extends Controller
       $reminder->body = $request->reminder;
       $reminder->isFinished = false;
       $reminder->createdUserID = 1;
+      $reminder->ReminderType = 1;
 
       $reminder->save();
 

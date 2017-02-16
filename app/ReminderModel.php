@@ -10,4 +10,9 @@ class ReminderModel extends Model
     public $primarykey ="id";
     public $timestamp = true; //ละได้เหมือนกัน
 
+    public function type()
+    {
+      return $this->belongsTo(ReminderTypeModel::class,'ReminderType','id');
+    }
+
 }
