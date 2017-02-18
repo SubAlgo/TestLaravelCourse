@@ -23,6 +23,8 @@ Route::get('/','ReminderController@home');
 Route::post('/reminder/new','ReminderController@addReminder');
 Route::delete('/reminder/delete','ReminderController@deleteReminder');
 
+Route::post('/remindertype/new', 'ReminderTypeController@addReminderType');
+
 //----------------------------------------------
 Route::get('/profile','ProfileController@getProfile');
 

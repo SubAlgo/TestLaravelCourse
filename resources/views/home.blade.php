@@ -3,11 +3,15 @@
 @section('content')
   <div class="container">
     @include('components.ReminderList')
-     @include('components.NewReminder')
+    @include('components.NewReminder')
+    @include('components.ReminderTypeList')
+    @include('components.NewReminderType')
+    {{--   @include('components.ReminderTypeList', ['types' => $types]))--}}
 
-    {{-- @include('components.ReminderList',['reminders' => $reminders])--}}
+    {{--   @include('components.NewReminderType'))--}}
 
-  {{--   @include('components.NewReminder', ['types' => $types])--}}
+
+
   </div>
 
 @endsection

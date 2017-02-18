@@ -23,8 +23,9 @@ class ReminderController extends Controller
       $reminder = new ReminderModel();//สร้าง Object จาก class ReminderModel
       $reminder->body = $request->reminder;
       $reminder->isFinished = false;
-      $reminder->createdUserID = 1;
       $reminder->ReminderType = $request->type;
+      $reminder->createdUserID = 1;
+
 
       $reminder->save();
 
