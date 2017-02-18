@@ -12,6 +12,8 @@
         <form method="post" action="/reminder/delete">
           <div class="well" >
             <span>{{$reminder->body}} <b>({{$reminder->type->typename}})</b></span>
+            {{--type คือ function ที่อยู่ใน Class: ReminderModel--}}
+            {{--$reminder->type->typename คือ เรียกใช้ function type() ในclass ReminderModel โดยเอาข้อมูลที่ชื่อ typename มาแสดง--}}
           {{csrf_field()}}
           <input type="hidden" name="_method" value="delete">
           <input type="hidden" name="id" value={{$reminder->id}}>
