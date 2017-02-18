@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 use App\ReminderModel; //Import ReminderModel เข้ามาเพื่อให้สามารถใช้งานได้
+use App\ReminderTypeModel;
 
 class ReminderController extends Controller
 {
@@ -12,7 +13,8 @@ class ReminderController extends Controller
     {
       //$reminders = DB::table('Reminder')->orderBy('id','desc')->get();
       $reminders = ReminderModel::orderBy('id','desc')->get();
-      return view('home',['reminders'=> $reminders]);
+      $types = ReminderTypeModel::get();
+      return view('home',['reminders'=> $reminders, 'types' => $types]);
     }
 
     public function addReminder(Request $request) //$request เป็นข้อมูลที่รับค่ามาจาก form
@@ -21,10 +23,9 @@ class ReminderController extends Controller
       $reminder->body = $request->reminder;
       $reminder->isFinished = false;
       $reminder->createdUserID = 1;
-      $reminder->ReminderType = 1;
+      $reminder->ReminderType = $request->type;
 
       $reminder->save();
-      
 
       /*$body = $request->reminder;
       DB::table('Reminder')->insert(['body'=>$body,'isFinished'=>false,'createdUserID'=>1]);

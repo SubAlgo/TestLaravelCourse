@@ -11,7 +11,7 @@
         {{--<a class="btn btn-success pull-right">Finish</a>--}}
         <form method="post" action="/reminder/delete">
           <div class="well" >
-            <span>{{$reminder->body}}</span>
+            <span>{{$reminder->body}} <b>({{$reminder->type->typename}})</b></span>
           {{csrf_field()}}
           <input type="hidden" name="_method" value="delete">
           <input type="hidden" name="id" value={{$reminder->id}}>
