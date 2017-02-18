@@ -5,6 +5,15 @@
        <textarea class="form-control" name="reminder" rows="8" cols="80"></textarea>
    </div>
 
+   <div class = "form-group">
+     <label>Type : </label>
+     <select  class = "form-control" name = "type">
+       @foreach ($types as $type)
+         <option value="{{$type->id}}">{{$type->typename}}</option>
+      @endforeach
+     </select>
+   </div>
+
    <div class="form-group">
        {{csrf_field()}}
        <input class="btn btn-primary" type="submit" value="Create New Reminder">
