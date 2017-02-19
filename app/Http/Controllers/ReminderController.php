@@ -45,5 +45,10 @@ class ReminderController extends Controller
       return back()->with('status','Good Job! You finished 1 task');
     }
 
+    public function showFinishedReminder()
+    {
+      return view('FinishedReminder',['reminders'=>ReminderModel::onlyTrashed()->get()]);
+    }
+
 
 }
