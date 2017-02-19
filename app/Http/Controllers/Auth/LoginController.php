@@ -27,6 +27,13 @@ class LoginController extends Controller
      */
     protected $redirectTo = '/home';
 
+    //เป็นการกำหนดให้เวลา Authen ให้ไปตรวจฟิวที่ชื่อ username แทนที่ค่า defult ที่ไปตรวจสอบจาก Email
+    //แต่ต้องสร้าง ฟิวชื่อ username ในตารางสำหรับ auth ก่อน
+    public function username()
+    {
+      return 'username';
+    }
+
     /**
      * Create a new controller instance.
      *

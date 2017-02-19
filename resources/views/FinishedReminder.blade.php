@@ -1,16 +1,17 @@
 @extends('template')
 
 @section('content')
-  <div class="container">
-    <tabel clas="table">
+  <h1>FinishedReminder(s)</h1>
+  <div class='container'>
+    <table clas='table'>
       <tr>
-        <td>ReminderNmae</td>
+        <td>Reminder Name</td>
         <td>Finish At</td>
       </tr>
 
       @foreach ($reminders as $reminder)
         <tr>
-            <td>{{$reminder->body}}</td>
+            <td>({{$reminder->body}})</td>
             <td>{{$reminder->deleted_at}}</td>
         </tr>
       @endforeach
